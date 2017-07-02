@@ -1,30 +1,39 @@
 package problemSet;
 import java.lang.*;
+import java.util.Comparator;
 import java.util.*;
 
 
 //QUESTION -> https://www.careercup.com/question?id=5748104113422336
 
 
-//class FreqWord(){
-//	int count;
-//	String word;
-//	
-//	public String getWord(){
-//		return this.word;
-//	}
-//	
-//	public getCount(){
-//		
-//	}
-//}
+class FreqWord{
+	int count;
+	String word;
+	
+	public String getWord(){
+		return word;
+	}
+	
+	int getCount(){
+		return count;
+	}
+	
+	void setCount(int aIncount){
+		count = aIncount;
+	}
+}
 
 public class PriorityQueueExample {
-//	public int maxFreqWord(String words[]){
-//		PriorityQueue<String> pq = new PriorityQueue<String>();
-//		for(int i = 0;)
-//		
-//	}
+	public void maxFreqWordusingPQ(String words[]){
+		PriorityQueue<FreqWord> pq = new PriorityQueue<FreqWord>( new Comparator<FreqWord>(){ 
+			public int compare(FreqWord first, FreqWord second) {
+				return (first.getCount() - second.getCount());
+			}});
+		
+		// Void Implementation
+				
+		}
 	
 	
 	//This works but need to replace the implementation with PQ;
