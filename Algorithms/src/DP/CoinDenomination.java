@@ -12,8 +12,8 @@ public class CoinDenomination {
 		
 		for(int i = 0; i < Denominations.length; i++){
 			for(int j = 1; j <= total; j++){
-				if(j >= Denominations[i]) {
-					if( 1 + T[j - Denominations[i]] < T[j]){
+				if(j >= Denominations[i]) { // if this total can be formed  by picking ith denomination
+					if( 1 + T[j - Denominations[i]] < T[j]){ // By picking ith coin, value reduced by T[currentValue - Coin value] and if that is less than existing value
 						T[j] = 1 + T[j - Denominations[i]];
 						Indices[i] = j;
 					}
