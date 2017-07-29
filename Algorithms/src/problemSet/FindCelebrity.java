@@ -38,4 +38,29 @@ public class FindCelebrity {
 	        }
 	        return candidate;	
 	}
+	
+	// LeetCode Solution
+	
+	public int findCelebrityleetCode(int n) {
+		int celebrity = 0; // Assuming 0th Candidate is a celebrity
+		for(int i = 0; i < n; i++ ){
+			if(knows(celebrity, i)) // if celebrity knows i, means our assumption is wrong and we remove our last selected celebrity to be a real celebrity 
+				  celebrity = i;
+			//else part if celebrity does not know i, then we keep looking for next member to see if the last picked celebrity still holds good for him as well
+		}
+		
+		// This is validation check to see if all values below yje current celebrity number still holds the validation
+		// This is cause, in earlier celebrity selection loop, we pick potential celebrity increasing.
+		for(int i = 0; i < celebrity; i++ ){
+			if(knows(celebrity, i))
+				return -1;
+		}
+		
+		// This is reverse validation
+		for(int i = 0; i < n; i++ ){
+			if(!knows(celebrity, i))
+				return -1;
+		}
+		return celebrity;
+	}
 }
