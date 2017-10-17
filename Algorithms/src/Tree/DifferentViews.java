@@ -1,9 +1,9 @@
 package Tree;
 
-class Tree{
-	Tree  left, right;
-	int val;
-}
+//class Tree{
+//	Tree  left, right;
+//	int val;
+//}
 
 public class DifferentViews {
 	static int max_visited_level = 0; // Important to track whats the max level visited so far
