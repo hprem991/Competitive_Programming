@@ -3,7 +3,7 @@
 /********************************************************************************
 Class Name	  :  Procedure Factory
 Purpose		  :  Procedure Creator Factory
-Author		  :  Prem, December 2017
+Author		  :  Prem Krishna Chettri, December 2017
 Note		  :  This is a creator for template factory
 *******************************************************************************/
 
@@ -16,8 +16,8 @@ Note		  :  This is a creator for template factory
 class ProcedureFactory
 {
 public:
-	typedef ProcedureBase* (*ComponentFactoryFuncPtr)();
-    typedef map<const char*, ComponentFactoryFuncPtr> map_type;
+    typedef ProcedureBase* (*ComponentFactoryFuncPtr)(); // This is the base class which holds the function
+    typedef map<const char*, ComponentFactoryFuncPtr> map_type; // A map to hold the factory function pointer
     map_type m_Map;
 
 public:
